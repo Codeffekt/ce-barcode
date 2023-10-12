@@ -1,0 +1,24 @@
+<div class="barcode-scanner">
+
+  <zxing-scanner [formats]="formatsEnabled" [device]="deviceCurrent" (deviceChange)="onDeviceChange($event)"
+    (camerasFound)="onCamerasFound($event)" (scanComplete)="onScanComplete($event)">
+  </zxing-scanner>
+
+  <button class="barcode-scanner-exit" mat-mini-fab (click)="dismiss()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div class="barcode-scanner-target"></div>
+
+  <div class="barcode-actions">
+    <button mat-flat-button [matMenuTriggerFor]="menu">
+      <mat-icon>camera</mat-icon>Choix caméra
+    </button>
+    <mat-menu class="camera-selector-menu" #menu="matMenu">
+      <button [class.active]="device.deviceId === deviceCurrent?.deviceId" mat-menu-item *ngFor="let device of devices"
+        (click)="onDeviceChange(device)">
+        {{device.label}}
+      </button>
+    </mat-menu>
+  </div>
+</div>

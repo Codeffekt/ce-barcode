@@ -1,0 +1,71 @@
+.camera-selector-menu {
+    margin-bottom: 12px !important;
+    max-width: 100% !important;
+    .mat-menu-item.active {
+        background: #e4e4e4;
+    }
+}
+
+.barcode-scanner {
+    height: 100%;
+    width: 100%;
+    background: black;
+    position: relative;
+
+    zxing-scanner {
+        width: 100vw;
+        height: 100vh;
+        video {
+            height: 100% !important;
+            object-fit: contain !important;
+        }
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .barcode-actions {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        color: white;
+        z-index: 1;
+    }
+
+    .barcode-scanner-exit {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .barcode-scanner-preview {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: 100%;
+        background-size: cover;
+    }
+    .barcode-scanner-target {
+        animation: blinker 1s linear infinite;
+        height: 1px;
+        position: relative;
+        top: calc(50% - 1px);
+        width: 90%;
+        margin: 0 auto;
+        background: red;
+    }
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
+}
+
+.barcode-scanner-dialog mat-dialog-container {
+    padding: 0 !important;
+}

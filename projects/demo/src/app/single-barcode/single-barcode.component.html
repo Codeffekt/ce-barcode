@@ -1,0 +1,21 @@
+<div class="d-flex flex-column">
+<div class="d-flex flex-row row-wrap mt-3">
+    <mat-slide-toggle [(ngModel)]="formBlock.params.displayInline">
+        Affichage code-barres
+    </mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="formBlock.params.editType">
+        Edition type
+    </mat-slide-toggle>
+</div>
+
+<div class="demo my-auto">
+    <div class="card">
+        <h3 class="text-center mb-3">Barcode demo</h3>
+        <form [formGroup]="form" (formChanges)="onFormChanges($event)">
+            <ce-form-block-factory formControlName="barcode" [formBlock]="formBlock"></ce-form-block-factory>
+        </form>
+    </div>
+</div>
+
+<div>{{ctime | calendarDate}}</div>
+</div>

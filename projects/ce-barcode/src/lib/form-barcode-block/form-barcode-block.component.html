@@ -1,0 +1,36 @@
+<ng-container *ngIf="formBlock">
+    <div class="d-flex flex-row align-items-center  position-relative">
+        <mat-form-field class="flex-grow-1 me-2" appearance="legacy">
+            <mat-label>{{formBlock.label}}</mat-label>
+            <input matInput [ngModel]="value?.text" type="text" (ngModelChange)="barcodeInputChanged($event)"
+                [disabled]="formBlock.readonly!" [required]="formBlock.required!">
+            <mat-error *ngIf="formBlock.required && !value">Champ requis</mat-error>
+            <mat-hint *ngIf="formBlock.hint">{{formBlock.hint}}</mat-hint>
+        </mat-form-field>
+        <button *ngIf="!formBlock.params?.displayInline" mat-icon-button color="primary" (click)="showBarcode()">
+            <mat-icon>qr_code</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="scanBarcode()">
+            <mat-icon>qr_code_scanner</mat-icon>
+        </button>
+    </div>
+
+
+    <ng-container *ngIf="!!value?.text; else noBarcode">
+        <mat-form-field *ngIf="formBlock.params?.editType">
+            <mat-label>Type</mat-label>
+            <mat-select [ngModel]="value?.type" (ngModelChange)="barcodeTypeChanged($event)">
+                <mat-option *ngFor="let type of supportedTypes" [value]="type | barcodeFormatLabel">{{type |
+                    barcodeFormatLabel}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <ng-container *ngIf="formBlock.params?.displayInline">
+            <ce-barcode [text]="value?.text" [type]="value?.type"></ce-barcode>
+        </ng-container>
+    </ng-container>
+
+    <ng-template #noBarcode><span class="text-warn text-danger">Veuillez saisir un code-barre</span>
+    </ng-template>
+
+</ng-container>
