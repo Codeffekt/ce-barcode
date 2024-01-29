@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { BarcodeScannerComponent, BarcodeScannerDialogConfirmation } from './barcode-scanner/barcode-scanner.component';
-import { BarcodeComponent } from './barcode.component';
+import { BarcodeComponent } from './barcode/barcode.component';
 import { FormBarcodeBlockComponent, FormBarcodeDialogComponent } from './form-barcode-block/form-barcode-block.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { BarcodeFormatLabel } from './barcode-formats';
 import { FormBlockStoreService, TableCellStoreService } from '@codeffekt/ce-core';
 import { TableCellBarcodeComponent } from './table-cell-barcode/table-cell-barcode.component';
+import { FormsQrcodeDialogComponent } from './forms-qrcode-dialog/forms-qrcode-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TableCellBarcodeComponent } from './table-cell-barcode/table-cell-barco
     FormBarcodeBlockComponent,
     FormBarcodeDialogComponent,
     BarcodeFormatLabel,
-    TableCellBarcodeComponent
+    TableCellBarcodeComponent,
+    FormsQrcodeDialogComponent
   ],
   imports: [
     CommonModule,
@@ -45,6 +47,7 @@ import { TableCellBarcodeComponent } from './table-cell-barcode/table-cell-barco
     FormBarcodeBlockComponent,
     FormBarcodeDialogComponent,
     TableCellBarcodeComponent,
+    FormsQrcodeDialogComponent,
   ]
 })
 export class CeBarcodeModule {
