@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^13.3.1",
     "@angular/platform-browser-dynamic": "^13.3.1",
     "@angular/router": "^13.3.1",
-    "@codeffekt/ce-core": "^13.9.0",
+    "@codeffekt/ce-core": "^13.9.1",
     "@codeffekt/ce-core-data": "^1.1.0",
     "@ngneat/until-destroy": "^8.1.4",
     "@popperjs/core": "^2.10.2",
