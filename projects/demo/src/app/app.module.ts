@@ -5,7 +5,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CeBarcodeModule } from '@codeffekt/ce-barcode';
-import { CeCoreModule } from '@codeffekt/ce-core';
+import { CeCoreModule, CeFormBlocksModule, CePipesModule, CeTableModule } from '@codeffekt/ce-core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SingleBarcodeComponent } from './single-barcode/single-barcode.component';
@@ -22,7 +22,10 @@ import { MatTableModule } from '@angular/material/table';
     BrowserModule,
     BrowserAnimationsModule,
     CeCoreModule,
+    CeTableModule,
     CeBarcodeModule,
+    CePipesModule,
+    CeFormBlocksModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
