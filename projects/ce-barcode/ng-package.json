@@ -8,6 +8,7 @@
     "@zxing/library",
     "@zxing/ngx-scanner",
     "@zxing/browser",    
-    "jsbarcode"
+    "jsbarcode",
+    "qrcode"
   ]
 }

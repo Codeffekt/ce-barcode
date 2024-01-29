@@ -1,5 +1,11 @@
-import { AfterViewInit, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import {
+  AfterViewInit, Component,
+  ElementRef, Input,
+  OnChanges, SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import JsBarcode from 'jsbarcode';
+import QRCode from 'qrcode';
 
 const BARCODE_TYPE_TO_JSBARCODE: { [key: string]: string } = {
   "CODE_39": "CODE39",
@@ -15,13 +21,17 @@ function getJSBarcodeFromBarcodeType(type: string): string {
 @Component({
   selector: 'ce-barcode',
   templateUrl: './barcode.component.html',
+  styleUrls: ['./barcode.component.scss'],
 })
 export class BarcodeComponent implements OnChanges, AfterViewInit {
 
   @ViewChild('svg') svgElementRef!: ElementRef;
+  @ViewChild('canvas') canvasElementRef!: ElementRef;
 
   @Input() text: string | undefined;
   @Input() type: string | undefined;
+
+  generatorType: 'QRCODE' | 'JSBARCODE' = 'JSBARCODE';
 
   constructor() { }
 
@@ -36,16 +46,29 @@ export class BarcodeComponent implements OnChanges, AfterViewInit {
   }
 
   private update(): void {
-    if (!this.text || !this.svgElementRef) {
+    if (!this.text || !this.svgElementRef || !this.canvasElementRef) {
       return;
     }
 
-    const format = this.type ? getJSBarcodeFromBarcodeType(this.type) : 'CODE128';
+    if (this.type === "QR_CODE") {
+      this.generateWithQRcode(this.text);
+    } else {
+      this.generateWithJsBarCode(this.text);
+    }
+  }
 
-    JsBarcode(this.svgElementRef.nativeElement, this.text, {
+  private generateWithJsBarCode(text: string) {
+    this.generatorType = 'JSBARCODE';
+    const format = this.type ? getJSBarcodeFromBarcodeType(this.type) : 'CODE128';
+    JsBarcode(this.svgElementRef.nativeElement, text, {
       format,
       fontSize: 12,
       height: 48
     } as any);
+  }
+
+  private generateWithQRcode(text: string) {
+    this.generatorType = 'QRCODE';
+    QRCode.toCanvas(this.canvasElementRef.nativeElement, text);
   }
 }

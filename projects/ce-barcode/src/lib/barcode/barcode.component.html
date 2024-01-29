@@ -1,1 +1,2 @@
-<svg #svg></svg>
+<svg [ngStyle]="generatorType === 'QRCODE' ? {'display': 'none'} : {'display': 'inline'}" #svg></svg>
+<canvas [ngStyle]="generatorType !== 'QRCODE' ? {'display': 'none'} : {'display': 'inline'}" #canvas></canvas>

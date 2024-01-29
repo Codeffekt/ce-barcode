@@ -74,7 +74,7 @@ export interface FormbarcodeDialogData {
 
 @Component({
   selector: 'ce-form-barcode-dialog',
-  template: `<ce-barcode [text]="data.barcode.text"></ce-barcode>`
+  template: `<ce-barcode [text]="data.barcode.text" [type]="data.barcode.type"></ce-barcode>`
 })
 export class FormBarcodeDialogComponent {
   constructor(

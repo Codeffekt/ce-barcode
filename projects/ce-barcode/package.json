@@ -25,8 +25,8 @@
   },
   "dependencies": {
     "tslib": "^2.1.0",      
-    "@zxing/browser": "0.1.1",
-    "@zxing/library": "0.19.1",
+    "@zxing/browser": "0.1.4",
+    "@zxing/library": "0.20.0",
     "@zxing/ngx-scanner": "3.5.0",
     "jsbarcode": "^3.11.5",
     "qrcode": "^1.5.3"
