@@ -1,0 +1,9 @@
+<mat-dialog-content>
+    <ng-container *ngIf="barcodeValue">
+        <ce-barcode [text]="barcodeValue" type="DATA_MATRIX"></ce-barcode>
+    </ng-container>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button mat-stroked-button (click)="this.dialogRef.close()">Fermer</button>
+</mat-dialog-actions>
