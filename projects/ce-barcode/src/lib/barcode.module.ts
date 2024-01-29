@@ -16,6 +16,7 @@ import { BarcodeFormatLabel } from './barcode-formats';
 import { FormBlockStoreService, TableCellStoreService } from '@codeffekt/ce-core';
 import { TableCellBarcodeComponent } from './table-cell-barcode/table-cell-barcode.component';
 import { FormsQrcodeDialogComponent } from './forms-qrcode-dialog/forms-qrcode-dialog.component';
+import { QrcodeComponent } from './qrcode/qrcode.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsQrcodeDialogComponent } from './forms-qrcode-dialog/forms-qrcode-d
     FormBarcodeDialogComponent,
     BarcodeFormatLabel,
     TableCellBarcodeComponent,
-    FormsQrcodeDialogComponent
+    FormsQrcodeDialogComponent,
+    QrcodeComponent
   ],
   imports: [
     CommonModule,
@@ -48,6 +50,7 @@ import { FormsQrcodeDialogComponent } from './forms-qrcode-dialog/forms-qrcode-d
     FormBarcodeDialogComponent,
     TableCellBarcodeComponent,
     FormsQrcodeDialogComponent,
+    QrcodeComponent,
   ]
 })
 export class CeBarcodeModule {

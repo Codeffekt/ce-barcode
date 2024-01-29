@@ -36,6 +36,7 @@
     "ngx-file-drop": "^13.0.0",
     "ngx-filesize": "^2.0.16",
     "proj4": "^2.7.5",
+    "qrcode": "^1.5.3",
     "rxjs": "^7.5.7",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
@@ -51,6 +52,7 @@
     "@angular/compiler-cli": "^13.3.1",
     "@types/jasmine": "^3.6.3",
     "@types/node": "^12.19.14",
+    "@types/qrcode": "^1.5.5",
     "@typescript-eslint/eslint-plugin": "5.27.1",
     "@typescript-eslint/parser": "5.27.1",
     "eslint": "^8.17.0",
