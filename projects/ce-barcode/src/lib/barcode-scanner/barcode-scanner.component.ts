@@ -25,7 +25,10 @@ export class BarcodeScannerComponent implements OnInit {
     BarcodeFormat.QR_CODE,
   ];
 
-  constructor(private dialog: MatDialog, private dialogRef: MatDialogRef<BarcodeScannerComponent>) { }
+  constructor(
+    private dialog: MatDialog,
+    private dialogRef: MatDialogRef<BarcodeScannerComponent>
+  ) { }
 
   static openDialog(dialog: MatDialog): MatDialogRef<BarcodeScannerComponent> {
     return dialog.open(BarcodeScannerComponent, {
