@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { FormBlock } from '@codeffekt/ce-core-data';
 
 @Component({
@@ -9,7 +9,7 @@ import { FormBlock } from '@codeffekt/ce-core-data';
 })
 export class SingleBarcodeComponent implements OnInit {
   
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
   formBlock: FormBlock = {
     field: 'barcode',
@@ -24,7 +24,7 @@ export class SingleBarcodeComponent implements OnInit {
 
   ctime = Date.now();
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
