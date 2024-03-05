@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
 import { BarcodeFormat, Result } from '@zxing/library';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { getBarcodeTypeFromZxingFormat } from '../barcode-formats';
