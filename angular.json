@@ -11,7 +11,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
+          "options": {                        
             "tsConfig": "projects/ce-barcode/tsconfig.lib.json",
             "project": "projects/ce-barcode/ng-package.json"
           },
@@ -45,6 +45,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "preserveSymlinks": true,
             "outputPath": "dist/demo",
             "index": "projects/demo/src/index.html",
             "main": "projects/demo/src/main.ts",

@@ -1,37 +1,29 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatLegacySlideToggleModule as MatSlideToggleModule } from '@angular/material/legacy-slide-toggle';
-import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CeBarcodeModule } from '@codeffekt/ce-barcode';
-import { CeCoreModule, CeFormBlocksModule, CePipesModule, CeTableModule } from '@codeffekt/ce-core';
+import { CeCoreModule } from '@codeffekt/ce-core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SingleBarcodeComponent } from './single-barcode/single-barcode.component';
-import { ArrayBarcodeComponent } from './array-barcode/array-barcode.component';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
+import { ArrayBarcodeModule } from './array-barcode/array-barcode.module';
+import { SingleBarcodeModule } from './single-barcode/single-barcode.module';
+import { CeBarcodeModule } from '@codeffekt/ce-barcode';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SingleBarcodeComponent,
-    ArrayBarcodeComponent
+    AppComponent,    
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    CeCoreModule,
-    CeTableModule,
-    CeBarcodeModule,
-    CePipesModule,
-    CeFormBlocksModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatDialogModule,
-    MatSlideToggleModule,
-    MatTableModule,
+    CeCoreModule,    
+    ArrayBarcodeModule,
+    SingleBarcodeModule,
+    CeBarcodeModule,    
+    AppRoutingModule,    
+    MatDialogModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 {
   "name": "@codeffekt/ce-barcode",
-  "version": "13.9.0",  
+  "version": "16.0.0",  
   "description": "CeCore render component for barcode block",
   "author": {
     "name": "Codeffekt",
@@ -13,21 +13,21 @@
   },
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@angular/common": "^13.3.1",
-    "@angular/core": "^13.3.1",
-    "@angular/forms": "^13.3.1",
-    "@angular/material": "^13.3.2",
-    "@angular/cdk": "^13.3.2",
+    "@angular/common": "^16.2.12",
+    "@angular/core": "^16.2.12",
+    "@angular/forms": "^16.2.12",
+    "@angular/material": "^16.2.14",
+    "@angular/cdk": "^16.2.14",
     "@ngneat/until-destroy": "^8.1.4",
-    "@codeffekt/ce-core": "^13.9.0",
-    "@codeffekt/ce-core-data": "^1.1.0",
+    "@codeffekt/ce-core": "^16.0.0",
+    "@codeffekt/ce-core-data": "^1.1.2",
     "rxjs": "^7.5.7"
   },
   "dependencies": {
     "tslib": "^2.1.0",      
     "@zxing/browser": "0.1.4",
     "@zxing/library": "0.20.0",
-    "@zxing/ngx-scanner": "3.5.0",
+    "@zxing/ngx-scanner": "^16.1.0",
     "jsbarcode": "^3.11.5",
     "qrcode": "^1.5.3"
   },

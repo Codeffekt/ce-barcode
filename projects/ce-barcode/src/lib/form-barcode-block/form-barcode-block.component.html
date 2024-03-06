@@ -1,6 +1,6 @@
 <ng-container *ngIf="formBlock">
     <div class="d-flex flex-row align-items-center  position-relative">
-        <mat-form-field class="flex-grow-1 me-2" appearance="legacy">
+        <mat-form-field class="flex-grow-1 me-2">
             <mat-label>{{formBlock.label}}</mat-label>
             <input matInput [ngModel]="value?.text" type="text" (ngModelChange)="barcodeInputChanged($event)"
                 [disabled]="formBlock.readonly!" [required]="formBlock.required!">

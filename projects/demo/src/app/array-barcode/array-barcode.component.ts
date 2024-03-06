@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBlock } from '@codeffekt/ce-core-data';
 
-@Component({
+@Component({  
   selector: 'app-array-barcode',
   templateUrl: './array-barcode.component.html',
   styleUrls: ['./array-barcode.component.scss']
