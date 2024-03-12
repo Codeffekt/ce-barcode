@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { FormsQrcodeDialogComponent } from '@codeffekt/ce-barcode';
+import { BarcodeScannerComponent, FormsQrcodeDialogComponent } from '@codeffekt/ce-barcode';
+import { BarCode } from '@codeffekt/ce-core-data';
 
 @Component({
   selector: 'app-root',
@@ -23,5 +24,15 @@ export class AppComponent {
           "ff7f7b37-95ec-4b9d-befc-2b4ef62cf411"
         ]
       });
+  }
+
+  openBarcodeScanner() {
+    const dialogRef = BarcodeScannerComponent.openDialog(this.dialog);
+
+    dialogRef.afterClosed().subscribe((barcode: Pick<BarCode, "text" | "type">) => {
+      if (barcode) {
+        console.log(barcode);
+      }
+    });
   }
 }

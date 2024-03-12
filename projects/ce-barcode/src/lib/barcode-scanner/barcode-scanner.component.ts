@@ -3,6 +3,11 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { BarcodeFormat, Result } from '@zxing/library';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { getBarcodeTypeFromZxingFormat } from '../barcode-formats';
+
+export interface BarcodeScannerDialogOptions {
+  useConfirmationDialog: boolean;
+}
+
 @Component({
   selector: 'ce-barcode-scanner',
   templateUrl: './barcode-scanner.component.html',
@@ -30,12 +35,15 @@ export class BarcodeScannerComponent implements OnInit {
     private dialogRef: MatDialogRef<BarcodeScannerComponent>
   ) { }
 
-  static openDialog(dialog: MatDialog): MatDialogRef<BarcodeScannerComponent> {
+  static openDialog(dialog: MatDialog, options: BarcodeScannerDialogOptions = {
+     useConfirmationDialog: true
+  }): MatDialogRef<BarcodeScannerComponent> {
     return dialog.open(BarcodeScannerComponent, {
       height: '100%',
       width: '100%',
       maxWidth: '100%',
-      panelClass: 'barcode-scanner-dialog'
+      panelClass: 'barcode-scanner-dialog',
+      data: options
     });
   }
 
