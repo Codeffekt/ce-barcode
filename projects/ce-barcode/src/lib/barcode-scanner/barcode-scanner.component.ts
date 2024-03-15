@@ -30,13 +30,8 @@ export class BarcodeScannerComponent implements OnInit {
     BarcodeFormat.QR_CODE,
   ];
 
-  constructor(
-    private dialog: MatDialog,
-    private dialogRef: MatDialogRef<BarcodeScannerComponent>
-  ) { }
-
   static openDialog(dialog: MatDialog, options: BarcodeScannerDialogOptions = {
-     useConfirmationDialog: true
+    useConfirmationDialog: true
   }): MatDialogRef<BarcodeScannerComponent> {
     return dialog.open(BarcodeScannerComponent, {
       height: '100%',
@@ -46,6 +41,12 @@ export class BarcodeScannerComponent implements OnInit {
       data: options
     });
   }
+
+  constructor(
+    private dialog: MatDialog,
+    private dialogRef: MatDialogRef<BarcodeScannerComponent>,
+    @Inject(MAT_DIALOG_DATA) private config: BarcodeScannerDialogOptions,
+  ) { }
 
   ngOnInit() { }
 
@@ -74,21 +75,33 @@ export class BarcodeScannerComponent implements OnInit {
       return;
     }
 
+    if (this.config.useConfirmationDialog) {
+      this.showConfirmationDialog(result);
+    } else {
+      this.sendResult(result);
+      return;
+    }
+
+    this.shouldDecode = false;
+  }
+
+  private showConfirmationDialog(result: Result) {
     const config: BarcodeScannerConfirmationConfig = {
       result
     };
-
     const confirmDiagRef = this.dialog.open(BarcodeScannerDialogConfirmation, { data: config });
     confirmDiagRef.afterClosed().subscribe(exit => {
       if (exit) {
-        this.dismiss({ text: result.getText(), type: getBarcodeTypeFromZxingFormat(result.getBarcodeFormat()) });
+        this.sendResult(result);
         return;
       } else {
         this.shouldDecode = true;
       }
     });
+  }
 
-    this.shouldDecode = false;
+  private sendResult(result: Result) {
+    this.dismiss({ text: result.getText(), type: getBarcodeTypeFromZxingFormat(result.getBarcodeFormat()) });
   }
 }
 
