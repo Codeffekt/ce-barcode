@@ -1,6 +1,6 @@
 {
   "name": "@codeffekt/ce-barcode",
-  "version": "18.0.0",  
+  "version": "18.0.1",  
   "description": "CeCore render component for barcode block",
   "author": {
     "name": "Codeffekt",
@@ -20,7 +20,7 @@
     "@angular/cdk": "^18.2.8",
     "@ngneat/until-destroy": "^8.1.4",
     "@codeffekt/ce-core": "^18.0.0",
-    "@codeffekt/ce-core-data": "^1.2,0",
+    "@codeffekt/ce-core-data": "^1.2.0",
     "rxjs": "^7.5.7"
   },
   "dependencies": {
