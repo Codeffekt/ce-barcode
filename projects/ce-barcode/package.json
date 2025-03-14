@@ -1,6 +1,6 @@
 {
   "name": "@codeffekt/ce-barcode",
-  "version": "18.0.1",  
+  "version": "19.0.0",  
   "description": "CeCore render component for barcode block",
   "author": {
     "name": "Codeffekt",
