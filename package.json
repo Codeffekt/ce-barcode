@@ -31,7 +31,7 @@
     "@popperjs/core": "^2.10.2",
     "@zxing/browser": "^0.1.5",
     "@zxing/library": "^0.21.3",
-    "@zxing/ngx-scanner": "^18.0.1",
+    "@zxing/ngx-scanner": "^19.0.0",
     "angular-svg-icon": "^16.1.0",
     "bootstrap": "^5.1.1",
     "dayjs": "^1.11.10",

@@ -1,6 +1,6 @@
 {
   "name": "@codeffekt/ce-barcode",
-  "version": "19.0.1",  
+  "version": "19.0.2",  
   "description": "CeCore render component for barcode block",
   "author": {
     "name": "Codeffekt",
@@ -27,7 +27,7 @@
     "tslib": "^2.1.0",      
     "@zxing/browser": "^0.1.5",
     "@zxing/library": "^0.21.3",
-    "@zxing/ngx-scanner": "^18.0.1",
+    "@zxing/ngx-scanner": "^19.0.0",
     "jsbarcode": "^3.11.5",
     "qrcode": "^1.5.3"
   },
