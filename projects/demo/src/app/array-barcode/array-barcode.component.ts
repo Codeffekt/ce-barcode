@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBlock } from '@codeffekt/ce-core-data';
 
-@Component({  
-  selector: 'app-array-barcode',
-  templateUrl: './array-barcode.component.html',
-  styleUrls: ['./array-barcode.component.scss']
+@Component({
+    selector: 'app-array-barcode',
+    templateUrl: './array-barcode.component.html',
+    styleUrls: ['./array-barcode.component.scss'],
+    standalone: false
 })
 export class ArrayBarcodeComponent implements OnInit {
 

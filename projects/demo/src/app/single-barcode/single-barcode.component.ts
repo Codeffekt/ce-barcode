@@ -3,9 +3,10 @@ import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { FormBlock } from '@codeffekt/ce-core-data';
 
 @Component({
-  selector: 'app-single-barcode',
-  templateUrl: './single-barcode.component.html',
-  styleUrls: ['./single-barcode.component.scss']
+    selector: 'app-single-barcode',
+    templateUrl: './single-barcode.component.html',
+    styleUrls: ['./single-barcode.component.scss'],
+    standalone: false
 })
 export class SingleBarcodeComponent implements OnInit {
   

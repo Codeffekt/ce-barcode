@@ -49,7 +49,8 @@ export function getZxingFormatFromType(type: string): BarcodeFormat {
   }
 
 @Pipe({
-    name: 'barcodeFormatLabel'
+    name: 'barcodeFormatLabel',
+    standalone: false
 })
 export class BarcodeFormatLabel implements PipeTransform {
     transform(type: BarcodeFormat, ...args: any[]): string {

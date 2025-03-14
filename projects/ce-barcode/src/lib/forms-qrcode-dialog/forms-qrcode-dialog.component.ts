@@ -7,9 +7,10 @@ export interface FormsQrcodeDialogConfig {
 }
 
 @Component({
-  selector: 'lib-forms-qrcode-dialog',
-  templateUrl: './forms-qrcode-dialog.component.html',
-  styleUrls: ['./forms-qrcode-dialog.component.css']
+    selector: 'lib-forms-qrcode-dialog',
+    templateUrl: './forms-qrcode-dialog.component.html',
+    styleUrls: ['./forms-qrcode-dialog.component.css'],
+    standalone: false
 })
 export class FormsQrcodeDialogComponent implements OnInit {
 

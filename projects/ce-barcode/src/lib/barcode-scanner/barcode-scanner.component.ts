@@ -9,10 +9,11 @@ export interface BarcodeScannerDialogOptions {
 }
 
 @Component({
-  selector: 'ce-barcode-scanner',
-  templateUrl: './barcode-scanner.component.html',
-  styleUrls: ['./barcode-scanner.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'ce-barcode-scanner',
+    templateUrl: './barcode-scanner.component.html',
+    styleUrls: ['./barcode-scanner.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class BarcodeScannerComponent implements OnInit {
 
@@ -110,15 +111,16 @@ interface BarcodeScannerConfirmationConfig {
 }
 
 @Component({
-  selector: 'barcode-scanner-result',
-  template: `
+    selector: 'barcode-scanner-result',
+    template: `
   <p>Code-barres détecté: {{text}}</p>
   <div mat-dialog-actions fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="end center">
     <button mat-button color="warn" [mat-dialog-close]="false">Nouveau scan</button>
     <button mat-flat-button  [mat-dialog-close]="true" cdkFocusInitial>Valider</button>
   </div>
   `,
-  styleUrls: []
+    styleUrls: [],
+    standalone: false
 })
 export class BarcodeScannerDialogConfirmation {
 

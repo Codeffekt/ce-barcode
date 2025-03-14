@@ -19,9 +19,10 @@ function getJSBarcodeFromBarcodeType(type: string): string {
 }
 
 @Component({
-  selector: 'ce-barcode',
-  templateUrl: './barcode.component.html',
-  styleUrls: ['./barcode.component.scss'],
+    selector: 'ce-barcode',
+    templateUrl: './barcode.component.html',
+    styleUrls: ['./barcode.component.scss'],
+    standalone: false
 })
 export class BarcodeComponent implements OnChanges, AfterViewInit {
 

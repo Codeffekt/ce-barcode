@@ -5,9 +5,10 @@ import { BarCode } from '@codeffekt/ce-core-data';
 import { BarcodeFormat } from '@zxing/library';
 import { BarcodeScannerComponent } from '../barcode-scanner/barcode-scanner.component';
 @Component({
-  selector: 'ce-form-barcode-block',
-  templateUrl: './form-barcode-block.component.html',
-  styleUrls: ['./form-barcode-block.component.scss']
+    selector: 'ce-form-barcode-block',
+    templateUrl: './form-barcode-block.component.html',
+    styleUrls: ['./form-barcode-block.component.scss'],
+    standalone: false
 })
 export class FormBarcodeBlockComponent extends FormBlockComponent<BarCode> implements OnInit {
 
@@ -73,8 +74,9 @@ export interface FormbarcodeDialogData {
 }
 
 @Component({
-  selector: 'ce-form-barcode-dialog',
-  template: `<ce-barcode [text]="data.barcode.text" [type]="data.barcode.type"></ce-barcode>`
+    selector: 'ce-form-barcode-dialog',
+    template: `<ce-barcode [text]="data.barcode.text" [type]="data.barcode.type"></ce-barcode>`,
+    standalone: false
 })
 export class FormBarcodeDialogComponent {
   constructor(
