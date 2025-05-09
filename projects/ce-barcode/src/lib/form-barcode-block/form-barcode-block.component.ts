@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBlockComponent } from '@codeffekt/ce-core';
-import { BarCode } from '@codeffekt/ce-core-data';
+import { BarCode, FormBlock } from '@codeffekt/ce-core-data';
 import { BarcodeFormat } from '@zxing/library';
 import { BarcodeScannerComponent } from '../barcode-scanner/barcode-scanner.component';
 @Component({
@@ -10,7 +10,7 @@ import { BarcodeScannerComponent } from '../barcode-scanner/barcode-scanner.comp
     styleUrls: ['./form-barcode-block.component.scss'],
     standalone: false
 })
-export class FormBarcodeBlockComponent extends FormBlockComponent<BarCode> implements OnInit {
+export class FormBarcodeBlockComponent extends FormBlockComponent<FormBlock<BarCode>> implements OnInit {
 
   supportedTypes: BarcodeFormat[] = [
     BarcodeFormat.CODE_39,
@@ -41,7 +41,7 @@ export class FormBarcodeBlockComponent extends FormBlockComponent<BarCode> imple
   }
 
   barcodeTypeChanged(type: string) {
-    this.update({ text: this.value.text, type });
+    this.update({ text: this.value!.text, type });
   }
 
   scanBarcode() {
@@ -57,13 +57,12 @@ export class FormBarcodeBlockComponent extends FormBlockComponent<BarCode> imple
 
   private update(value: Pick<BarCode, "text" | "type">) {
 
-    const newValue = { ...this.value, ...value };
+    const newValue: BarCode = { ...this.value!, ...value };
     const now = new Date().getTime();
     if (!newValue.ctime) {
       newValue.ctime = now;
     }
-    newValue.mtime = now;
-    console
+    newValue.mtime = now;    
     this.value = newValue;
   }
 }
